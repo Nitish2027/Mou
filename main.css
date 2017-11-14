@@ -3,3 +3,22 @@ body {
     font-family: arial, helvetica, sans-serif;
     padding-top: 40px;
 }
+
+table{
+    border: 2px solid black;
+    padding: 10px;
+    background-color: inherit;
+}
+
+table > tr,td{
+  padding: 5px;
+  border: 1px dotted grey;
+  font-weight: bold;
+}
+
+.table_div{
+position: absolute;
+left: 35%;
+top: 80px;
+
+}
