@@ -9,12 +9,24 @@
 		<link rel="stylesheet" type="text/css" href="skin.css"/>
 		<link rel="stylesheet" type="text/css" href="main.css"/>
 
-		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-		<script>
-		    $(function() {
-		         $( "#calendar" ).datepicker();
-		    });
-		</script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  <script>
+
+		$(function() {
+	    $("#date_ex").datepicker();
+	  });
+
+		$(document).ready(function(){
+				$("a.clickable").click(function(event){
+						event.preventDefault();
+						$("input#textbox").val($(this).html());
+				});
+		});
+
+	  </script>
 
 
 	</head>
@@ -159,7 +171,7 @@
 				</tr>
 				<tr>
 					<td>Date of Signing: </td>
-					<td><input type="text" id="calendar"/></td>
+					<td><input type="text" id="date_ex" readonly></td>
 				</tr>
 				<tr>
 					<td>Validity: </td>

@@ -69,10 +69,5 @@
         document.addEventListener("click", hideAllInactiveMenus);
     });
 
-    $(document).ready(function(){
-        $("a.clickable").click(function(event){
-            event.preventDefault();
-            $("input#textbox").val($(this).html());
-        });
-    });
+
 })();
