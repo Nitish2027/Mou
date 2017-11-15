@@ -28,8 +28,8 @@
 
 	  </script>
 
-
 	</head>
+
 <body>
 	<div class="Header">
 	    <ul class="Menu -horizontal">
@@ -241,9 +241,185 @@
 						</select>
 					</td>
 				</tr>
+				<tr class="noborder">
+						<td colspan="2" class="noborder"><hr></td>
+				</tr>
+				<tr class="noborder">
+						<td colspan="2" class="noborder"><h3 align="center">Nodal Officer</h3></td>
+				</tr>
+				<tr>
+						<td>Name: </td>
+						<td><input type="text" name="name"/></td>
+				</tr>
+				<tr>
+						<td>Email: </td>
+						<td><input type="text" name="email"/></td>
+				</tr>
+				<tr>
+						<td>Contact Number: </td>
+						<td><input type="text" name="cnumber"/></td>
+				</tr>
+				<tr>
+					<td>Faculty: </td>
+					<td>
+						<select name="Nodal_Faculty">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>School: </td>
+					<td>
+						<select name="Nodal_School">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Department: </td>
+					<td>
+						<select name="Nodal_Department">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr class="noborder">
+						<td colspan="2" class="noborder"><hr></td>
+				</tr>
+				<tr class="noborder">
+						<td colspan="2" class="noborder"><h3 align="center">Nodal Officer</h3></td>
+				</tr>
+				<tr>
+						<td>Name: </td>
+						<td><input type="text" name="name"/></td>
+				</tr>
+				<tr>
+						<td>Email: </td>
+						<td><input type="text" name="email"/></td>
+				</tr>
+				<tr>
+						<td>Contact Number: </td>
+						<td><input type="text" name="cnumber"/></td>
+				</tr>
+				<tr>
+					<td>Faculty: </td>
+					<td>
+						<select name="Nodal_Faculty">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>School: </td>
+					<td>
+						<select name="Nodal_School">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Department: </td>
+					<td>
+						<select name="Nodal_Department">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr class="noborder">
+						<td colspan="2" class="noborder"><hr></td>
+				</tr>
+				<tr class="noborder">
+						<td colspan="2" class="noborder"><h3 align="center">Nodal Officer</h3></td>
+				</tr>
+				<tr>
+						<td>Name: </td>
+						<td><input type="text" name="name"/></td>
+				</tr>
+				<tr>
+						<td>Email: </td>
+						<td><input type="text" name="email"/></td>
+				</tr>
+				<tr>
+						<td>Contact Number: </td>
+						<td><input type="text" name="cnumber"/></td>
+				</tr>
+				<tr>
+					<td>Faculty: </td>
+					<td>
+						<select name="Nodal_Faculty">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>School: </td>
+					<td>
+						<select name="Nodal_School">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Department: </td>
+					<td>
+						<select name="Nodal_Department">
+							<option value="" selected >Select</option>
+							<option value="Something1">Something1</option>
+							<option value="Something2">Something2</option>
+							<option value="Something3">Something3</option>
+							<option value="Something4">Something4</option>
+							<option value="Something5">Something5</option>
+						</select>
+					</td>
+				</tr>
 			</table>
 		</form>
-
 	</div>
+
+	<!--<div id="footer" align="center">
+		Manipal University Jaipur. All rights reserved.
+	</div> -->
 </body>
 </html>
