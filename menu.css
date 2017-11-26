@@ -212,7 +212,7 @@ element
     /* Background */
     .Menu ul,
     .Menu.-floating {
-        background: white;
+        background: crimson;
     }
 
     /* Padding for each menu item */
