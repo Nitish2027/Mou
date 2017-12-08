@@ -23,8 +23,26 @@
 				$("a.clickable").click(function(event){
 						event.preventDefault();
 						$("input#textbox").val($(this).html());
+						$('.table_div').slideToggle();
+						$('html, body').animate({
+				        scrollTop: 600
+				    }, 2000);
 				});
+
+				$('#select_category').change(function(){
+					 $(this).val() == "Other" ? $('#other_category').show() : $('#other_category').hide();
+				});
+
+				$('#select_validity').change(function(){
+					 $(this).val() == "Other" ? $('#other_validity').show() : $('#other_validity').hide();
+				});
+
+				$('#select_nature').change(function(){
+					 $(this).val() == "Other" ? $('#other_nature').show() : $('#other_nature').hide();
+				});
+
 		});
+
 
 	  </script>
 
@@ -208,13 +226,14 @@
 				<tr>
 					<td>Category: </td>
 					<td>
-						<select name="category">
+						<select id="select_category" name="category">
 							<option value="" selected >Select</option>
           		<option value="International">International</option>
 							<option value="National">National</option>
 							<option value="Industry">Industry</option>
 							<option value="Other">Other</option>
 						</select>
+						<input type="text" class="hiddenField" id="other_category" />
 					</td>
 				</tr>
 				<tr>
@@ -224,7 +243,7 @@
 				<tr>
 					<td>Validity: </td>
 					<td>
-						<select name="validity">
+						<select id="select_validity" name="validity">
 							<option value="" selected >Select</option>
 							<option value="1_Year">1 Year</option>
 							<option value="2_Years">2 Years</option>
@@ -234,6 +253,7 @@
 							<option value="Lifetime">Lifetime</option>
 							<option value="Other">Other</option>
 						</select>
+						<input type="text" class="hiddenField" id="other_validity" />
 					</td>
 				</tr>
 				<tr>
@@ -250,7 +270,7 @@
 				<tr>
 					<td>Nature of MOU: </td>
 					<td>
-						<select name="nature">
+						<select id="select_nature" name="nature">
 							<option value="" selected >Select</option>
 							<option value="Student_exchange">Student Exchange</option>
 							<option value="Study_abroad">Study Abroad</option>
@@ -258,6 +278,7 @@
 							<option value="Short_visit">Short Visit</option>
 							<option value="Other">Other</option>
 						</select>
+						<input type="text" class="hiddenField" id="other_nature" />
 					</td>
 				</tr>
 				<tr>
@@ -297,171 +318,74 @@
 				</tr>
 				<tr>
 						<td>Name: </td>
-						<td><input type="text" name="name"/></td>
+						<td><input type="text" name="nodal_name"/></td>
 				</tr>
 				<tr>
 						<td>Email: </td>
-						<td><input type="text" name="email"/></td>
+						<td><input type="text" name="nodal_email"/></td>
 				</tr>
 				<tr>
 						<td>Contact Number: </td>
-						<td><input type="text" name="cnumber"/></td>
+						<td><input type="text" name="nodal_cnumber"/></td>
 				</tr>
-				<tr>
-					<td>Faculty: </td>
-					<td>
-						<select name="Nodal_Faculty">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td>School: </td>
-					<td>
-						<select name="Nodal_School">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
-				</tr>
+
 				<tr>
 					<td>Department: </td>
-					<td>
-						<select name="Nodal_Department">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
+					<td><input name="dept" id="textbox" readonly> </td>
 				</tr>
 
 				<tr class="noborder">
 						<td colspan="2" class="noborder"><hr></td>
 				</tr>
+
 				<tr class="noborder">
-						<td colspan="2" class="noborder"><h3 align="center">Nodal Officer</h3></td>
+						<td colspan="2" class="noborder"><h3 align="center">Advisor</h3></td>
 				</tr>
 				<tr>
 						<td>Name: </td>
-						<td><input type="text" name="name"/></td>
+						<td><input type="text" name="advisor_name"/></td>
 				</tr>
 				<tr>
 						<td>Email: </td>
-						<td><input type="text" name="email"/></td>
+						<td><input type="text" name="advisor_email"/></td>
 				</tr>
 				<tr>
 						<td>Contact Number: </td>
-						<td><input type="text" name="cnumber"/></td>
+						<td><input type="text" name="advisor_cnumber"/></td>
 				</tr>
-				<tr>
-					<td>Faculty: </td>
-					<td>
-						<select name="Nodal_Faculty">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td>School: </td>
-					<td>
-						<select name="Nodal_School">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
-				</tr>
+
 				<tr>
 					<td>Department: </td>
-					<td>
-						<select name="Nodal_Department">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
+					<td><input name="dept" id="textbox" readonly> </td>
 				</tr>
+
 
 				<tr class="noborder">
 						<td colspan="2" class="noborder"><hr></td>
 				</tr>
+
+
 				<tr class="noborder">
-						<td colspan="2" class="noborder"><h3 align="center">Nodal Officer</h3></td>
+						<td colspan="2" class="noborder"><h3 align="center">Supervisor</h3></td>
 				</tr>
 				<tr>
 						<td>Name: </td>
-						<td><input type="text" name="name"/></td>
+						<td><input type="text" name="supervisor_name"/></td>
 				</tr>
 				<tr>
 						<td>Email: </td>
-						<td><input type="text" name="email"/></td>
+						<td><input type="text" name="supervisor_email"/></td>
 				</tr>
 				<tr>
 						<td>Contact Number: </td>
-						<td><input type="text" name="cnumber"/></td>
+						<td><input type="text" name="supervisor_cnumber"/></td>
 				</tr>
-				<tr>
-					<td>Faculty: </td>
-					<td>
-						<select name="Nodal_Faculty">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td>School: </td>
-					<td>
-						<select name="Nodal_School">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
-				</tr>
+
 				<tr>
 					<td>Department: </td>
-					<td>
-						<select name="Nodal_Department">
-							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
-						</select>
-					</td>
+					<td><input name="dept" id="textbox" readonly> </td>
 				</tr>
+
 				<tr>
 					<td class="noborder" align="center" style="padding:10px">
 						<input style="float:left" class="button" type="submit" formaction="save.php" name="register_mou" value="Submit">

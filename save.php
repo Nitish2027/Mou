@@ -12,8 +12,8 @@
 // 	if(!isset($error_message)) {
 		require_once("connect.php");
 		$db_handle = new DBConnect();
-		$query = "INSERT INTO main_table(mou_dept, category, date, validity, meant_for, nature, description, status, exchange) VALUES
-		('" . $_POST["dept"] . "', '" . $_POST["category"] . "', '" . $_POST["date"] . "', '" . $_POST["validity"] . "', '" . $_POST["meant_for"] . "', '" . $_POST["nature"] . "', '" . $_POST["brief"] . "', '" . $_POST["status"] . "', '" . $_POST["exchange"] . "')";
+		$query = "INSERT INTO main_table(mou_dept, category, date, validity, meant_for, nature, description, status, exchange, nodal_name, nodal_email, nodal_cnumber, advisor_name, advisor_email, advisor_cnumber, supervisor_name,supervisor_email, supervisor_cnumber) VALUES
+		('" . $_POST["dept"] . "', '" . $_POST["category"] . "', '" . $_POST["date"] . "', '" . $_POST["validity"] . "', '" . $_POST["meant_for"] . "', '" . $_POST["nature"] . "', '" . $_POST["brief"] . "', '" . $_POST["status"] . "', '" . $_POST["exchange"] . "', '" . $_POST["nodal_name"] . "', '" . $_POST["nodal_email"] . "', '" . $_POST["nodal_cnumber"] . "', '" . $_POST["advisor_name"] . "', '" . $_POST["advisor_email"] . "', '" . $_POST["advisor_cnumber"] . "', '" . $_POST["supervisor_name"] . "', '" . $_POST["supervisor_email"] . "', '" . $_POST["supervisor_cnumber"] . "')";
 		$result = $db_handle->insertQuery($query);
 
 		// $query = "INSERT INTO main_table(category,date) VALUES
