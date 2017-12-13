@@ -139,6 +139,11 @@ $(function() {
 				</tr>
 
 				<tr>
+						<td>University/Institution Name: </td>
+						<td><input type="text" name="university_name"/></td>
+				</tr>
+
+				<tr>
 					<td>Category: </td>
 					<td>
 						<select id="select_category" name="category">
