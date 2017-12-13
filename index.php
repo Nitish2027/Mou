@@ -13,21 +13,41 @@
 
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 	  <script>
 
 		$(function() {
 	    $("#date_ex").datepicker();
 	  });
 
+		jQuery.fn.multiselect = function() {
+    $(this).each(function() {
+        var checkboxes = $(this).find("input:checkbox");
+        checkboxes.each(function() {
+            var checkbox = $(this);
+            // Highlight pre-selected checkboxes
+            if (checkbox.prop("checked"))
+                checkbox.parent().addClass("multiselect-on");
+
+            // Highlight checkboxes that the user selects
+            checkbox.click(function() {
+                if (checkbox.prop("checked"))
+                    checkbox.parent().addClass("multiselect-on");
+                else
+                    checkbox.parent().removeClass("multiselect-on");
+            });
+        });
+    });
+};
+
+$(function() {
+     $(".multiselect").multiselect();
+});
+
+
+
 		$(document).ready(function(){
-				$("a.clickable").click(function(event){
-						event.preventDefault();
-						$("input#textbox").val($(this).html());
-						$('.table_div').slideToggle();
-						$('html, body').animate({
-				        scrollTop: 600
-				    }, 2000);
-				});
 
 				$('#select_category').change(function(){
 					 $(this).val() == "Other" ? $('#other_category').show() : $('#other_category').hide();
@@ -40,6 +60,19 @@
 				$('#select_nature').change(function(){
 					 $(this).val() == "Other" ? $('#other_nature').show() : $('#other_nature').hide();
 				});
+
+				$('#nodal_dept').change(function(){
+					 $(this).val() == "Other" ? $('#other_nodal_dept').show() : $('#other_nodal_dept').hide();
+				});
+
+				$('#advisor_dept').change(function(){
+					 $(this).val() == "Other" ? $('#other_advisor_dept').show() : $('#other_advisor_dept').hide();
+				});
+
+				$('#supervisor_dept').change(function(){
+					 $(this).val() == "Other" ? $('#other_supervisor_dept').show() : $('#other_supervisor_dept').hide();
+				});
+
 
 		});
 
@@ -63,166 +96,48 @@
         <li><a href="#">Lucas</a></li>
 		  </ul>
 	</div>
-	<div class="Content">
-	    <h2>Select Here:</h2>
-	    <ul class="Menu -vertical">
-					<li class="category">Faculty</li>
-	        <li class="-hasSubmenu">
-						<a href="#">Engineering</a>
-							<ul>
-								<li class="category">School</li>
-								<li class="-hasSubmenu">
-									<a href="#">School of Civil & Chemical Engineering</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Chemical Engineering</a></li>
-											<li><a class="clickable" href="#">Civil Engineering</a></li>
-										</ul>
-								</li>
-								<li class="-hasSubmenu">
-									<a href="#">School of Computer Science & Information Technology</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Computer & Communication Engineering</a></li>
-											<li><a class="clickable" href="#">Computer Science & Engineering </a></li>
-											<li><a class="clickable" href="#">Information Technology </a></li>
-										</ul>
-								</li>
-								<li class="-hasSubmenu">
-									<a href="#">School of Automobile, Mechanical & Mechatronics Engineering </a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Mechatronics Engineering </a></li>
-											<li><a class="clickable" href="#">Automobile Engineering </a></li>
-											<li><a class="clickable" href="#">Mechanical Engineering </a></li>
-										</ul>
-								</li>
-                <li class="-hasSubmenu">
-									<a href="#">School of Electrical, Electronics & Communication Engineering </a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Electrical Engineering </a></li>
-											<li><a class="clickable" href="#">Electronics & Communication Engineering </a></li>
-										</ul>
-								</li>
-							</ul>
-					</li>
-					<li class="-hasSubmenu">
-						<a href="#">Management & Commerce</a>
-							<ul>
-								<li class="category">School</li>
-								<li class="-hasSubmenu">
-									<a href="#">School of Business & Commerce</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Business Administration</a></li>
-											<li><a class="clickable" href="#">Commerce</a></li>
-										</ul>
-								</li>
-								<li class="-hasSubmenu">
-									<a href="#">School of Hotel Management</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Hotel Management</a></li>
-										</ul>
-								</li>
-								<li class="-hasSubmenu">
-									<a href="#">TAPMI School of Business</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Business</a></li>
-										</ul>
-								</li>
-							</ul>
-					</li>
-					<li class="-hasSubmenu">
-						<a href="#">Science</a>
-							<ul>
-								<li class="category">School</li>
-								<li class="-hasSubmenu">
-									<a href="#">School of Basic Sciences</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">BioScience</a></li>
-											<li><a class="clickable" href="#">Chemistry</a></li>
-											<li><a class="clickable" href="#">Mathematics & Statistics</a></li>
-                      <li><a class="clickable" href="#">Physics</a></li>
-										</ul>
-								</li>
-							</ul>
-					</li>
-          <li class="-hasSubmenu">
-						<a href="#">Arts & Law</a>
-							<ul>
-								<li class="category">School</li>
-								<li class="-hasSubmenu">
-									<a href="#">School of Humanities & Social Sciences</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Arts</a></li>
-											<li><a class="clickable" href="#">Economics</a></li>
-											<li><a class="clickable" href="#">Languages</a></li>
-                      <li><a class="clickable" href="#">Psychology</a></li>
-										</ul>
-								</li>
-                <li class="-hasSubmenu">
-									<a href="#">School of Law</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Law</a></li>
-										</ul>
-								</li>
-                <li class="-hasSubmenu">
-									<a href="#">School of Media & Communication</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Journalism & Mass Communication</a></li>
-										</ul>
-								</li>
-
-							</ul>
-					</li>
-          <li class="-hasSubmenu">
-						<a href="#">Design</a>
-							<ul>
-								<li class="category">School</li>
-								<li class="-hasSubmenu">
-									<a href="#">Centre for Built Environment</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Environment</a></li>
-										</ul>
-								</li>
-                <li class="-hasSubmenu">
-									<a href="#">School of Architecture & Design</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Architecture & Design</a></li>
-										</ul>
-								</li>
-                <li class="-hasSubmenu">
-									<a href="#">School of Planning & Design</a>
-										<ul>
-											<li class="category">Department</li>
-											<li><a class="clickable" href="#">Fashion Design</a></li>
-											<li><a class="clickable" href="#">Fine Arts</a></li>
-											<li><a class="clickable" href="#">Interior Design</a></li>
-                      <li><a class="clickable" href="#">Planning</a></li>
-										</ul>
-								</li>
-							</ul>
-					</li>
-    </ul>
-	</div>
-
 
 	<div class="table_div">
 		<form name="Register" method="post" action="save.php">
 			<table>
 				<tr>
-					<td>Chosen Department: </td>
-					<td><input name="dept" id="textbox" readonly> </td>
+					<td>M.O.U. Departments:</td>
+					<td>
+						 <div  class="multiselect">
+						    <label><input type="checkbox" name="option[]" value="Chemical Engineering" />Chemical Engineering</label>
+						    <label><input type="checkbox" name="option[]" value="Civil Engineering" />Civil Engineering</label>
+						    <label><input type="checkbox" name="option[]" value="Computer and Communication Engineering" />Computer and Communication Engineering</label>
+						    <label><input type="checkbox" name="option[]" value="Computer Science and Engineering" />Computer Science and Engineering</label>
+						    <label><input type="checkbox" name="option[]" value="Information Technology" />Information Technology</label>
+						    <label><input type="checkbox" name="option[]" value="Mechatronics Engineering" />Mechatronics Engineering</label>
+						    <label><input type="checkbox" name="option[]" value="Automobile Engineering" />Automobile Engineering</label>
+								<label><input type="checkbox" name="option[]" value="Mechanical Engineering" />Mechanical Engineering</label>
+								<label><input type="checkbox" name="option[]" value="Electrical Engineering" />Electrical Engineering</label>
+								<label><input type="checkbox" name="option[]" value="Electronics and Communication Engineering" />Electronics and Communication Engineering</label>
+								<label><input type="checkbox" name="option[]" value="Business Administration" />Business Administration</label>
+								<label><input type="checkbox" name="option[]" value="Commerce" />Commerce</label>
+								<label><input type="checkbox" name="option[]" value="Hotel Management" />Hotel Management</label>
+								<label><input type="checkbox" name="option[]" value="Business" />Business</label>
+								<label><input type="checkbox" name="option1[]" value="BioScience" />BioScience</label>
+								<label><input type="checkbox" name="option1[]" value="Chemistry" />Chemistry</label>
+								<label><input type="checkbox" name="option1[]" value="Mathematics and Statistics" />Mathematics and Statistics</label>
+								<label><input type="checkbox" name="option1[]" value="Physics" />Physics</label>
+								<label><input type="checkbox" name="option1[]" value="Arts" />Arts</label>
+								<label><input type="checkbox" name="option1[]" value="Economics" />Economics</label>
+								<label><input type="checkbox" name="option1[]" value="Languages" />Languages</label>
+								<label><input type="checkbox" name="option1[]" value="Psychology" />Psychology</label>
+								<label><input type="checkbox" name="option1[]" value="Law" />Law</label>
+								<label><input type="checkbox" name="option1[]" value="Journalism and Mass Communication" />Journalism and Mass Communication</label>
+								<label><input type="checkbox" name="option1[]" value="Environment" />Environment</label>
+								<label><input type="checkbox" name="option1[]" value="Architecture and Design" />Architecture and Design</label>
+								<label><input type="checkbox" name="option1[]" value="Fashion Design" />Fashion Design</label>
+								<label><input type="checkbox" name="option1[]" value="Interior Design" />Interior Design</label>
+								<label><input type="checkbox" name="option1[]" value="Planning" />Planning</label>
+								<label><input type="checkbox" name="option1[]" value="Fine Arts" />Fine Arts</label>
+						</div>
+			   </td>
 				</tr>
+
 				<tr>
 					<td>Category: </td>
 					<td>
@@ -233,7 +148,7 @@
 							<option value="Industry">Industry</option>
 							<option value="Other">Other</option>
 						</select>
-						<input type="text" class="hiddenField" id="other_category" />
+						<input type="text" name="other_category" class="hiddenField" id="other_category" />
 					</td>
 				</tr>
 				<tr>
@@ -253,7 +168,7 @@
 							<option value="Lifetime">Lifetime</option>
 							<option value="Other">Other</option>
 						</select>
-						<input type="text" class="hiddenField" id="other_validity" />
+						<input type="text" name="other_nature" class="hiddenField" id="other_validity" />
 					</td>
 				</tr>
 				<tr>
@@ -278,13 +193,13 @@
 							<option value="Short_visit">Short Visit</option>
 							<option value="Other">Other</option>
 						</select>
-						<input type="text" class="hiddenField" id="other_nature" />
+						<input type="text" name="other_nature" class="hiddenField" id="other_nature" />
 					</td>
 				</tr>
 				<tr>
 					<td>Brief Description: </td>
 					<td>
-						<textarea name="brief" rows="5" cols="40">
+						<textarea name="brief" rows="5" cols="47">
 						</textarea>
 					</td>
 				</tr>
@@ -331,7 +246,16 @@
 
 				<tr>
 					<td>Department: </td>
-					<td><input name="dept" id="textbox" readonly> </td>
+					<td>
+						<select id="nodal_dept" name="nodal_dept">
+							<option value="" selected >Select</option>
+							<option value="International">International</option>
+							<option value="National">National</option>
+							<option value="Industry">Industry</option>
+							<option value="Other">Other</option>
+						</select>
+						<input type="text" name="other_nodal_dept" class="hiddenField" id="other_nodal_dept" />
+					</td>
 				</tr>
 
 				<tr class="noborder">
@@ -356,7 +280,16 @@
 
 				<tr>
 					<td>Department: </td>
-					<td><input name="dept" id="textbox" readonly> </td>
+					<td>
+						<select id="advisor_dept" name="advisor_dept">
+							<option value="" selected >Select</option>
+							<option value="International">International</option>
+							<option value="National">National</option>
+							<option value="Industry">Industry</option>
+							<option value="Other">Other</option>
+						</select>
+						<input type="text" name="other_advisor_dept"  class="hiddenField" id="other_advisor_dept" />
+					</td>
 				</tr>
 
 
@@ -383,7 +316,16 @@
 
 				<tr>
 					<td>Department: </td>
-					<td><input name="dept" id="textbox" readonly> </td>
+					<td>
+						<select id="supervisor_dept" name="supervisor_dept">
+							<option value="" selected >Select</option>
+							<option value="International">International</option>
+							<option value="National">National</option>
+							<option value="Industry">Industry</option>
+							<option value="Other">Other</option>
+						</select>
+						<input type="text" name="other_supervisor_dept" class="hiddenField" id="other_supervisor_dept" />
+					</td>
 				</tr>
 
 				<tr>

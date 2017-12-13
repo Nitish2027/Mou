@@ -24,8 +24,8 @@ table > tr,td{
 
 .table_div{
 position: absolute;
-left: 35%;
-top: 98%;
+left: 30%;
+top: 10%;
 
 }
 
@@ -109,4 +109,20 @@ hr{
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.multiselect {
+    width:25em;
+    height:10em;
+    border:solid 1px #c0c0c0;
+    overflow:auto;
+}
+
+.multiselect label {
+    display:block;
+}
+
+.multiselect-on {
+    color:#ffffff;
+    background-color: salmon;
 }
