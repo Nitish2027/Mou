@@ -26,6 +26,7 @@
         var checkboxes = $(this).find("input:checkbox");
         checkboxes.each(function() {
             var checkbox = $(this);
+
             // Highlight pre-selected checkboxes
             if (checkbox.prop("checked"))
                 checkbox.parent().addClass("multiselect-on");
@@ -61,6 +62,10 @@ $(function() {
 					 $(this).val() == "Other" ? $('#other_nature').show() : $('#other_nature').hide();
 				});
 
+				$('#select_exchange').change(function(){
+					 $(this).val() == "Other" ? $('#other_exchange').show() : $('#other_exchange').hide();
+				});
+
 				$('#nodal_dept').change(function(){
 					 $(this).val() == "Other" ? $('#other_nodal_dept').show() : $('#other_nodal_dept').hide();
 				});
@@ -83,17 +88,10 @@ $(function() {
 
 <body>
 	<div class="Header">
-	    <ul class="Menu -horizontal">
-        <li><a href="#">Harry</a></li>
-        <li><a href="#">Ron</a></li>
-        <li><a href="#">Hermione</a></li>
-        <li><a href="#">Draco</a></li>
-		  </ul>
-		  <ul class="Menu -horizontal -alignRight">
-  			<li><a href="#">El</a></li>
-  			<li><a href="#">Mike</a></li>
-  			<li><a href="#">Dustin</a></li>
-        <li><a href="#">Lucas</a></li>
+	    <ul class="Menu -horizontal -alignRight">
+        <li><a href="#">Shubham</a></li>
+        <li><a href="#">Shivani</a></li>
+        <li><a href="#">Sharma</a></li>
 		  </ul>
 	</div>
 
@@ -118,22 +116,22 @@ $(function() {
 								<label><input type="checkbox" name="option[]" value="Commerce" />Commerce</label>
 								<label><input type="checkbox" name="option[]" value="Hotel Management" />Hotel Management</label>
 								<label><input type="checkbox" name="option[]" value="Business" />Business</label>
-								<label><input type="checkbox" name="option1[]" value="BioScience" />BioScience</label>
-								<label><input type="checkbox" name="option1[]" value="Chemistry" />Chemistry</label>
-								<label><input type="checkbox" name="option1[]" value="Mathematics and Statistics" />Mathematics and Statistics</label>
-								<label><input type="checkbox" name="option1[]" value="Physics" />Physics</label>
-								<label><input type="checkbox" name="option1[]" value="Arts" />Arts</label>
-								<label><input type="checkbox" name="option1[]" value="Economics" />Economics</label>
-								<label><input type="checkbox" name="option1[]" value="Languages" />Languages</label>
-								<label><input type="checkbox" name="option1[]" value="Psychology" />Psychology</label>
-								<label><input type="checkbox" name="option1[]" value="Law" />Law</label>
-								<label><input type="checkbox" name="option1[]" value="Journalism and Mass Communication" />Journalism and Mass Communication</label>
-								<label><input type="checkbox" name="option1[]" value="Environment" />Environment</label>
-								<label><input type="checkbox" name="option1[]" value="Architecture and Design" />Architecture and Design</label>
-								<label><input type="checkbox" name="option1[]" value="Fashion Design" />Fashion Design</label>
-								<label><input type="checkbox" name="option1[]" value="Interior Design" />Interior Design</label>
-								<label><input type="checkbox" name="option1[]" value="Planning" />Planning</label>
-								<label><input type="checkbox" name="option1[]" value="Fine Arts" />Fine Arts</label>
+								<label><input type="checkbox" name="option[]" value="BioScience" />BioScience</label>
+								<label><input type="checkbox" name="option[]" value="Chemistry" />Chemistry</label>
+								<label><input type="checkbox" name="option[]" value="Mathematics and Statistics" />Mathematics and Statistics</label>
+								<label><input type="checkbox" name="option[]" value="Physics" />Physics</label>
+								<label><input type="checkbox" name="option[]" value="Arts" />Arts</label>
+								<label><input type="checkbox" name="option[]" value="Economics" />Economics</label>
+								<label><input type="checkbox" name="option[]" value="Languages" />Languages</label>
+								<label><input type="checkbox" name="option[]" value="Psychology" />Psychology</label>
+								<label><input type="checkbox" name="option[]" value="Law" />Law</label>
+								<label><input type="checkbox" name="option[]" value="Journalism and Mass Communication" />Journalism and Mass Communication</label>
+								<label><input type="checkbox" name="option[]" value="Environment" />Environment</label>
+								<label><input type="checkbox" name="option[]" value="Architecture and Design" />Architecture and Design</label>
+								<label><input type="checkbox" name="option[]" value="Fashion Design" />Fashion Design</label>
+								<label><input type="checkbox" name="option[]" value="Interior Design" />Interior Design</label>
+								<label><input type="checkbox" name="option[]" value="Planning" />Planning</label>
+								<label><input type="checkbox" name="option[]" value="Fine Arts" />Fine Arts</label>
 						</div>
 			   </td>
 				</tr>
@@ -165,26 +163,25 @@ $(function() {
 					<td>
 						<select id="select_validity" name="validity">
 							<option value="" selected >Select</option>
-							<option value="1_Year">1 Year</option>
-							<option value="2_Years">2 Years</option>
-							<option value="3_Years">3 Years</option>
-							<option value="4_Years">4 Years</option>
-							<option value="5_Years">5 Years</option>
+							<option value="1 Year">1 Year</option>
+							<option value="2 Years">2 Years</option>
+							<option value="3 Years">3 Years</option>
+							<option value="4 Years">4 Years</option>
+							<option value="5 Years">5 Years</option>
 							<option value="Lifetime">Lifetime</option>
 							<option value="Other">Other</option>
 						</select>
-						<input type="text" name="other_nature" class="hiddenField" id="other_validity" />
+						<input type="text" name="other_validity" class="hiddenField" id="other_validity" />
 					</td>
 				</tr>
 				<tr>
 					<td>MOU meant for: </td>
 					<td>
-						<select name="meant_for">
-							<option value="" selected >Select</option>
-							<option value="Student">Student</option>
-							<option value="Faculty">Faculty</option>
-							<option value="Researcher">Researcher</option>
-						</select>
+						<div  class="multiselect_new">
+							 <label><input type="checkbox" name="option1[]" value="Student" />Student</label>
+							 <label><input type="checkbox" name="option1[]" value="Faculty" />Faculty</label>
+							 <label><input type="checkbox" name="option1[]" value="Researcher" />Researcher</label>
+						 </div>
 					</td>
 				</tr>
 				<tr>
@@ -192,10 +189,10 @@ $(function() {
 					<td>
 						<select id="select_nature" name="nature">
 							<option value="" selected >Select</option>
-							<option value="Student_exchange">Student Exchange</option>
-							<option value="Study_abroad">Study Abroad</option>
-							<option value="Sem_exchange">Sem Exchange</option>
-							<option value="Short_visit">Short Visit</option>
+							<option value="Student Exchange">Student Exchange</option>
+							<option value="Study Abroad">Study Abroad</option>
+							<option value="Sem Exchange">Sem Exchange</option>
+							<option value="Short Visit">Short Visit</option>
 							<option value="Other">Other</option>
 						</select>
 						<input type="text" name="other_nature" class="hiddenField" id="other_nature" />
@@ -204,7 +201,7 @@ $(function() {
 				<tr>
 					<td>Brief Description: </td>
 					<td>
-						<textarea name="brief" rows="5" cols="47">
+						<textarea name="brief" rows="5" cols="54">
 						</textarea>
 					</td>
 				</tr>
@@ -220,14 +217,14 @@ $(function() {
 				<tr>
 					<td>Exchange Requirement: </td>
 					<td>
-						<select name="exchange">
+						<select id="select_exchange"  name="exchange">
 							<option value="" selected >Select</option>
-							<option value="Something1">Something1</option>
-							<option value="Something2">Something2</option>
-							<option value="Something3">Something3</option>
-							<option value="Something4">Something4</option>
-							<option value="Something5">Something5</option>
+							<option value="Fully Sponsored by the host organisation">Fully Sponsored by the host organisation</option>
+							<option value="Fee Waiver">Fee Waiver</option>
+							<option value="Accomodation and Fooding cost in Host Country">Accomodation and Fooding cost in Host Country</option>
+							<option value="Other">Other</option>
 						</select>
+						<input type="text" name="other_exchange" class="hiddenField" id="other_exchange" />
 					</td>
 				</tr>
 				<tr class="noborder">
@@ -254,9 +251,36 @@ $(function() {
 					<td>
 						<select id="nodal_dept" name="nodal_dept">
 							<option value="" selected >Select</option>
-							<option value="International">International</option>
-							<option value="National">National</option>
-							<option value="Industry">Industry</option>
+							<option value="Chemical Engineering" />Chemical Engineering</option>
+							<option value="Civil Engineering" />Civil Engineering</option>
+							<option value="Computer and Communication Engineering" />Computer and Communication Engineering</option>
+							<option value="Computer Science and Engineering" />Computer Science and Engineering</option>
+							<option value="Information Technology" />Information Technology</option>
+							<option value="Mechatronics Engineering" />Mechatronics Engineering</option>
+							<option value="Automobile Engineering" />Automobile Engineering</option>
+							<option value="Mechanical Engineering" />Mechanical Engineering</option>
+								<option value="Electrical Engineering" />Electrical Engineering</option>
+							<option value="Electronics and Communication Engineering" />Electronics and Communication Engineering</option>
+							<option value="Business Administration" />Business Administration</option>
+							<option value="Commerce" />Commerce</option>
+							<option value="Hotel Management" />Hotel Management</option>
+							<option value="Business" />Business</option>
+							<option value="BioScience" />BioScience</option>
+							<option value="Chemistry" />Chemistry</option>
+							<option value="Mathematics and Statistics" />Mathematics and Statistics</option>
+							<option value="Physics" />Physics</option>
+							<option value="Arts" />Arts</option>
+							<option value="Economics" />Economics</option>
+							<option value="Languages" />Languages</option>
+							<option value="Psychology" />Psychology</option>
+							<option value="Law" />Law</option>
+							<option value="Journalism and Mass Communication" />Journalism and Mass Communication</option>
+								<option value="Environment" />Environment</option>
+							<option value="Architecture and Design" />Architecture and Design</option>
+							<option value="Fashion Design" />Fashion Design</option>
+							<option value="Interior Design" />Interior Design</option>
+							<option value="Planning" />Planning</option>
+							<option value="Fine Arts" />Fine Arts</option>
 							<option value="Other">Other</option>
 						</select>
 						<input type="text" name="other_nodal_dept" class="hiddenField" id="other_nodal_dept" />
@@ -288,9 +312,36 @@ $(function() {
 					<td>
 						<select id="advisor_dept" name="advisor_dept">
 							<option value="" selected >Select</option>
-							<option value="International">International</option>
-							<option value="National">National</option>
-							<option value="Industry">Industry</option>
+							<option value="Chemical Engineering" />Chemical Engineering</option>
+							<option value="Civil Engineering" />Civil Engineering</option>
+							<option value="Computer and Communication Engineering" />Computer and Communication Engineering</option>
+							<option value="Computer Science and Engineering" />Computer Science and Engineering</option>
+							<option value="Information Technology" />Information Technology</option>
+							<option value="Mechatronics Engineering" />Mechatronics Engineering</option>
+							<option value="Automobile Engineering" />Automobile Engineering</option>
+							<option value="Mechanical Engineering" />Mechanical Engineering</option>
+								<option value="Electrical Engineering" />Electrical Engineering</option>
+							<option value="Electronics and Communication Engineering" />Electronics and Communication Engineering</option>
+							<option value="Business Administration" />Business Administration</option>
+							<option value="Commerce" />Commerce</option>
+							<option value="Hotel Management" />Hotel Management</option>
+							<option value="Business" />Business</option>
+							<option value="BioScience" />BioScience</option>
+							<option value="Chemistry" />Chemistry</option>
+							<option value="Mathematics and Statistics" />Mathematics and Statistics</option>
+							<option value="Physics" />Physics</option>
+							<option value="Arts" />Arts</option>
+							<option value="Economics" />Economics</option>
+							<option value="Languages" />Languages</option>
+							<option value="Psychology" />Psychology</option>
+							<option value="Law" />Law</option>
+							<option value="Journalism and Mass Communication" />Journalism and Mass Communication</option>
+								<option value="Environment" />Environment</option>
+							<option value="Architecture and Design" />Architecture and Design</option>
+							<option value="Fashion Design" />Fashion Design</option>
+							<option value="Interior Design" />Interior Design</option>
+							<option value="Planning" />Planning</option>
+							<option value="Fine Arts" />Fine Arts</option>
 							<option value="Other">Other</option>
 						</select>
 						<input type="text" name="other_advisor_dept"  class="hiddenField" id="other_advisor_dept" />
@@ -324,9 +375,36 @@ $(function() {
 					<td>
 						<select id="supervisor_dept" name="supervisor_dept">
 							<option value="" selected >Select</option>
-							<option value="International">International</option>
-							<option value="National">National</option>
-							<option value="Industry">Industry</option>
+							<option value="Chemical Engineering" />Chemical Engineering</option>
+							<option value="Civil Engineering" />Civil Engineering</option>
+							<option value="Computer and Communication Engineering" />Computer and Communication Engineering</option>
+							<option value="Computer Science and Engineering" />Computer Science and Engineering</option>
+							<option value="Information Technology" />Information Technology</option>
+							<option value="Mechatronics Engineering" />Mechatronics Engineering</option>
+							<option value="Automobile Engineering" />Automobile Engineering</option>
+							<option value="Mechanical Engineering" />Mechanical Engineering</option>
+								<option value="Electrical Engineering" />Electrical Engineering</option>
+							<option value="Electronics and Communication Engineering" />Electronics and Communication Engineering</option>
+							<option value="Business Administration" />Business Administration</option>
+							<option value="Commerce" />Commerce</option>
+							<option value="Hotel Management" />Hotel Management</option>
+							<option value="Business" />Business</option>
+							<option value="BioScience" />BioScience</option>
+							<option value="Chemistry" />Chemistry</option>
+							<option value="Mathematics and Statistics" />Mathematics and Statistics</option>
+							<option value="Physics" />Physics</option>
+							<option value="Arts" />Arts</option>
+							<option value="Economics" />Economics</option>
+							<option value="Languages" />Languages</option>
+							<option value="Psychology" />Psychology</option>
+							<option value="Law" />Law</option>
+							<option value="Journalism and Mass Communication" />Journalism and Mass Communication</option>
+								<option value="Environment" />Environment</option>
+							<option value="Architecture and Design" />Architecture and Design</option>
+							<option value="Fashion Design" />Fashion Design</option>
+							<option value="Interior Design" />Interior Design</option>
+							<option value="Planning" />Planning</option>
+							<option value="Fine Arts" />Fine Arts</option>
 							<option value="Other">Other</option>
 						</select>
 						<input type="text" name="other_supervisor_dept" class="hiddenField" id="other_supervisor_dept" />

@@ -14,7 +14,14 @@
 		require_once("connect.php");
 		$db_handle = new DBConnect();
 
-		$checkBox = implode(',', $_POST['option']);
+		$checkBox = implode(', ', $_POST['option']);
+
+		$checkbox1 = $_POST['option1'];
+		$chk="";
+		foreach($checkbox1 as $chk1)
+		{
+		$chk.= $chk1.", ";
+		}
 
 		$category = $_POST["category"] ;
 		if($category=="Other"){
@@ -29,6 +36,11 @@
 		$nature = $_POST["nature"] ;
 		if($nature=="Other"){
 			$nature = $_POST["other_nature"];
+		}
+
+		$exchange= $_POST["exchange"] ;
+		if($exchange=="Other"){
+			$exchange = $_POST["other_exchange"];
 		}
 
 		$nodal_dept = $_POST["nodal_dept"] ;
@@ -48,7 +60,7 @@
 
 
 					$query = "INSERT INTO main_table(mou_dept, university, category, date, validity, meant_for, nature, description, status, exchange, nodal_name, nodal_email, nodal_cnumber, nodal_dept, advisor_name, advisor_email, advisor_cnumber, advisor_dept, supervisor_name,supervisor_email, supervisor_cnumber, supervisor_dept) VALUES
-					('" . $checkBox . "', '" . $_POST["university_name"] . "', '" . $category . "', '" . $_POST["date"] . "', '" . $validity . "', '" . $_POST["meant_for"] . "', '" . $nature. "', '" . $_POST["brief"] . "', '" . $_POST["status"] . "', '" . $_POST["exchange"] . "', '" . $_POST["nodal_name"] . "', '" . $_POST["nodal_email"] . "', '" . $_POST["nodal_cnumber"] . "', '" . $nodal_dept. "',  '" . $_POST["advisor_name"] . "', '" . $_POST["advisor_email"] . "', '" . $_POST["advisor_cnumber"] . "', '" . $advisor_dept . "', '" . $_POST["supervisor_name"] . "', '" . $_POST["supervisor_email"] . "', '" . $_POST["supervisor_cnumber"] . "', '" . $supervisor_dept . "' )";
+					('" . $checkBox . "', '" . $_POST["university_name"] . "', '" . $category . "', '" . $_POST["date"] . "', '" . $validity . "', '" . $chk . "', '" . $nature. "', '" . $_POST["brief"] . "', '" . $_POST["status"] . "', '" . $exchange . "', '" . $_POST["nodal_name"] . "', '" . $_POST["nodal_email"] . "', '" . $_POST["nodal_cnumber"] . "', '" . $nodal_dept. "',  '" . $_POST["advisor_name"] . "', '" . $_POST["advisor_email"] . "', '" . $_POST["advisor_cnumber"] . "', '" . $advisor_dept . "', '" . $_POST["supervisor_name"] . "', '" . $_POST["supervisor_email"] . "', '" . $_POST["supervisor_cnumber"] . "', '" . $supervisor_dept . "' )";
 					$result = $db_handle->insertQuery($query);
 
 

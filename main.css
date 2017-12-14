@@ -1,18 +1,33 @@
 body {
-    background-color: Silver;
     font-family: arial, helvetica, sans-serif;
     padding-top: 40px;
 }
 
+html {
+  background: url("muj.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 table{
-    border: 2px solid black;
+    border: 2px double black;
     padding: 10px;
-    background-color: inherit;
+    opacity: 0.75;
+    filter: alpha(opacity=50);
+    background-color: #FF6633;
+}
+
+
+table:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
 }
 
 table > tr,td{
   padding: 5px;
-  border: 1px dotted grey;
+  border: 2px inset red;
   font-weight: bold;
 }
 
@@ -24,7 +39,7 @@ table > tr,td{
 
 .table_div{
 position: absolute;
-left: 30%;
+left: 10%;
 top: 10%;
 
 }
@@ -76,9 +91,10 @@ top: 10%;
 }
 
 hr{
+    margin-top: 1em;
     display: block;
     color: black;
-    border-style: inset;
+    border-style: outset;
     border-width: 2px;
 }
 
@@ -96,26 +112,35 @@ hr{
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: #4CAF50;
+  color: white;
+  background-color: green;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 9px orange;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {background-color: darkgreen}
 
 .button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+  background-color: red;
+  box-shadow: 0 5px green;
   transform: translateY(4px);
 }
 
 .multiselect {
-    width:25em;
+    width:29em;
     height:10em;
-    border:solid 1px #c0c0c0;
     overflow:auto;
+}
+
+.multiselect_new {
+    width:29em;
+    height:1em;
+    overflow:auto;
+}
+
+.multiselect_new label {
+    display:inline;
 }
 
 .multiselect label {
@@ -123,6 +148,13 @@ hr{
 }
 
 .multiselect-on {
-    color:#ffffff;
-    background-color: salmon;
+    color:#000000;
+    background-color:#FFCC66;
+}
+
+.success_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
